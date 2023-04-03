@@ -40,22 +40,8 @@ const eventSchema = new Schema({
 
   students: [
     {
-      studentName: {
-        type: String,
-        required: true,
-        trim: true,
-      },
-      studentEmail: {
-        type: String,
-        required: true,
-        unique: true,
-        match: [/.+@.+\..+/, "Must match an email address!"],
-      },
-      studentPhone: {
-        type: String,
-        required: true,
-        // match: [/^[\.-)( ]*([0-9]{3})[\.-)( ]*([0-9]{3})[\.-)( ]*([0-9]{4})$/,"Must be a phone number!",],
-      },
+      type: Schema.Types.ObjectId,
+      ref: 'Student'
     },
   ],
 });
