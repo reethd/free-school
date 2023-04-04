@@ -23,6 +23,6 @@ db.once("open", async () => {
   //     await tempUser.save();
   //   }
 
-  console.log("Holy fuck it worked!");
+  console.log("It worked!");
   process.exit(0);
 });
