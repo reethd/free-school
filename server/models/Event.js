@@ -7,11 +7,6 @@ const eventSchema = new Schema({
     trim: true,
     maxlength: 50,
   },
-  teacher: {
-    type: String,
-    required: true,
-    trim: true,
-  },
   location: {
     type: String,
     required: true,
@@ -37,7 +32,10 @@ const eventSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-
+  teacher: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
   students: [
     {
       type: Schema.Types.ObjectId,

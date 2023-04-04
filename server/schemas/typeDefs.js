@@ -24,6 +24,7 @@ const typeDefs = gql `
         name: String!
         email: String!
         phone: String!
+        event: Event!
     }
     
     type Auth {
@@ -47,6 +48,7 @@ const typeDefs = gql `
 
     type Query {
         users: [User]
+        user: User
         events: [Event]
         event(eventId: ID!): Event
         students: [Student]

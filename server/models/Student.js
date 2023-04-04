@@ -17,6 +17,10 @@ const studentSchema = new Schema({
         required: true,
         // match: [/^[\.-)( ]*([0-9]{3})[\.-)( ]*([0-9]{3})[\.-)( ]*([0-9]{4})$/,"Must be a phone number!",],
       },
+      event: {
+        type: Schema.Types.ObjectId,
+        ref: 'Event'
+      }
 
 })
 
