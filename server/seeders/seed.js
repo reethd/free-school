@@ -9,7 +9,7 @@ db.once("open", async () => {
   await User.deleteMany({});
   await Event.deleteMany({});
 
-  const users = await User.insertMany(userData);
+  // const users = await User.insertMany(userData);
   const events = await Event.insertMany(eventData);
 
   //   for (newEvent of events) {
