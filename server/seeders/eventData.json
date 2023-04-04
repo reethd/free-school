@@ -1,0 +1,88 @@
+[
+    {
+        "title": "How to Build a Birdhouse",
+        "location": "Sandy Creek Nature Center",
+        "time": "Sunday April 23rd 3pm",
+        "imageSource": "",
+        "description": "Come to Sandy Creek to learn how to build a birdhouse from scratch! All tools and materials provided. Includes basic woodworking as well as finishing.",
+        "students": [
+            {
+                "name": "Joey",
+                "email": "joey@gmail.com",
+                "phone": "555-867-5309"
+            },
+            {
+                "name": "Chandler",
+                "email": "chandler@gmail.com",
+                "phone": "(678)-555-1234"
+            }
+        ]
+    },
+    {
+        "title": "DIY Music Recording",
+        "location": "123 Easy St",
+        "time": "Thursday April 27th 11am",
+        "imageSource": "",
+        "description": "This seminar will demonstrate how to make a basic music recording. Topics covered will include microphone placement, room treatment and more!",
+        "students": [
+            {
+                "name": "Ross",
+                "email": "ross@gmail.com",
+                "phone": "7068765432"
+            },
+            {
+                "name": "Phoebe",
+                "email": "phoebe@gmail.com",
+                "phone": "555 420 6969"
+            }
+        ]
+    },
+    {
+        "title": "Basic Car Repair",
+        "location": "Bike Shop Parking Lot",
+        "time": "Tuesday May 9th 12pm",
+        "imageSource": "",
+        "description": "Ever struggled with changing a tire? What about jumping your battery? Learn how to solve these common issues and more at the Bike Shop Parking Lot! Build confidence in basic car repair and maintenance and save yourself money at the same time!",
+        "students": [
+            {
+                "name": "Rachel",
+                "email": "rachel@gmail.com",
+                "phone": "123.555.6789"
+            },
+            {
+                "name": "Monica",
+                "email": "monica@gmail.com",
+                "phone": "(555)555 5555"
+            }
+        ]
+    },
+    {
+        "title": "Who's that Fungi?",
+        "location": "Ben Burton Park",
+        "time": "Friday May 26th",
+        "imageSource": "",
+        "description": "Come on a nature walk as Ed Rooney points out and identifies different kinds of fungi. Learn what you can and cannot eat as well as medicinal and other uses for foraged flora.",
+        "students": [
+            {
+                "name": "Jerry",
+                "email": "Jerry@gmail.com",
+                "phone": "555-123-5309"
+            },
+            {
+                "name": "George",
+                "email": "George@gmail.com",
+                "phone": "555-867-5864"
+            },
+            {
+                "name": "Elaine",
+                "email": "Elaine@gmail.com",
+                "phone": "7705555309"
+            },
+            {
+                "name": "Cramer",
+                "email": "Cramer@gmail.com",
+                "phone": "897 555 0146"
+            }
+        ]
+    }
+]

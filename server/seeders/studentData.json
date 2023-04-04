@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Joey",
+        "email": "joey@gmail.com",
+        "phone": "555-867-5309"
+    },
+    {
+        "name": "Chandler",
+        "email": "chandler@gmail.com",
+        "phone": "(678)-555-1234"
+    },
+    {
+        "name": "Ross",
+        "email": "ross@gmail.com",
+        "phone": "7068765432"
+    },
+    {
+        "name": "Phoebe",
+        "email": "phoebe@gmail.com",
+        "phone": "555 420 6969"
+    },
+    {
+        "name": "Rachel",
+        "email": "rachel@gmail.com",
+        "phone": "123.555.6789"
+    },
+    {
+        "name": "Monica",
+        "email": "monica@gmail.com",
+        "phone": "(555)555 5555"
+    },
+    {
+        "name": "Jerry",
+        "email": "Jerry@gmail.com",
+        "phone": "555-123-5309"
+    },
+    {
+        "name": "George",
+        "email": "George@gmail.com",
+        "phone": "555-867-5864"
+    },
+    {
+        "name": "Elaine",
+        "email": "Elaine@gmail.com",
+        "phone": "7705555309"
+    },
+    {
+        "name": "Cramer",
+        "email": "Cramer@gmail.com",
+        "phone": "897 555 0146"
+    }
+]

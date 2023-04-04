@@ -1,0 +1,18 @@
+[
+    {
+        "username": "admin",
+        "email": "test_admin@gmail.com",
+        "password": "admin123"
+    },
+    {
+        "username": "hot4Teacher",
+        "email": "hot4Teacher@freechool.edu",
+        "password": "password123"
+    },
+    {
+        "username": "ERooney",
+        "email": "mr_rooney@freechool.edu",
+        "password": "buellersucks"
+    }
+]
+
