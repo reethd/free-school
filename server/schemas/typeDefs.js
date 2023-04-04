@@ -62,9 +62,9 @@ const typeDefs = gql `
         addStudent(newStudent: InputStudent!): Event
         removeEvent(eventId: ID!): User
         removeStudent(studentId: ID!): Event
-        updateEvent(eventId: ID!, title: String, location: String, time: String, imageSource: String, description: String )
+        updateEvent(eventId: ID!): User
     }
 
-`
+`;
 
 module.exports = typeDefs;

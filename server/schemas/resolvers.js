@@ -2,15 +2,16 @@ const { AuthenticationError } = require("apollo-server-express");
 const { User, Student, Event } = require("../models");
 const { signToken } = require("../utils/auth");
 
+
 const resolvers = {
   Query: {
     user: async (parent, { username }) => {
-      return await User.findById({ username })
+      return await User.findOne({ username })
         .populate("events")
         .populate({ path: "events", populate: "students" });
     },
     events: async () => {
-      return await Event.find({}).populate("teacher");
+      return await Event.find().populate("teacher");
     },
     event: async () => {
       return await Event.findOne({}).populate("");
@@ -74,11 +75,8 @@ const resolvers = {
     ) => {
       return Event.findOneAndUpdate(
         { _id: id },
-        { title },
-        { location },
-        { time },
-        { imageSource },
-        { description }
+        { title, location, time, imageSource, description },
+        { new: true }
       );
     },
   },
