@@ -1,3 +1,5 @@
+const studentSchema = require("./Student");
+
 const { Schema, model } = require("mongoose");
 
 const eventSchema = new Schema({
@@ -34,14 +36,9 @@ const eventSchema = new Schema({
   },
   teacher: {
     type: Schema.Types.ObjectId,
-    ref: 'User'
+    ref: "User",
   },
-  students: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Student'
-    },
-  ],
+  students: [studentSchema],
 });
 
 const Event = model("Event", eventSchema);

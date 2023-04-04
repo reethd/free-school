@@ -2,7 +2,6 @@ const { AuthenticationError } = require("apollo-server-express");
 const { User, Student, Event } = require("../models");
 const { signToken } = require("../utils/auth");
 
-
 const resolvers = {
   Query: {
     user: async (parent, { username }) => {
@@ -19,54 +18,60 @@ const resolvers = {
   },
 
   Mutation: {
-    login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+    login: async (parent, { username, password }) => {
+      const user = await User.findOne({ username });
       if (!user) {
-        throw new AuthenticationError("No user found with this email address");
+        throw new AuthenticationError("Invalid username or password");
       }
       const correctPw = await user.isCorrectPassword(password);
       if (!correctPw) {
-        throw new AuthenticationError("Incorrect credentials");
+        throw new AuthenticationError("Invalid username or password");
       }
       const token = signToken(user);
       return { token, user };
     },
 
-    addUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
+    addUser: async (parent, args) => {
+      const user = await User.create(args);
       const token = signToken(user);
       return { token, user };
     },
 
-    addEvent: async (
-      parent,
-      { title, location, time, imageSource, description }
-    ) => {
-      return await Event.create({
-        title,
-        location,
-        time,
-        imageSource,
-        description,
-      });
+    addEvent: async (parent, args, context) => {
+      const event = await Event.create({ ...args, teacher: context.user._id });
+      return await User.findByIdAndUpdate(
+        { _id: event.teacher },
+        { $push: { events: event._id } },
+        { new: true }
+      );
     },
 
-    addStudent: async (parent, { name, email, phone, event }) => {
-      const student = await Student.create({ name, email, phone, event });
+    addStudent: async (parent, args) => {
+      // const student = await Student.create(args);
       const updatedEvent = await Event.findByIdAndUpdate(
         { _id: student.event.id },
-        { $push: { students: student } },
+        { $push: { students: student._id } },
         { new: true }
       );
       return updatedEvent;
     },
 
-    removeEvent: async (parent, { id }) => {
-      return Event.findOneAndDelete({ _id: id });
+    removeEvent: async (parent, { _id }) => {
+      const event = await Event.findOneAndDelete({ _id });
+      return await User.findByIdAndUpdate(
+        { _id: event.teacher },
+        { $pull: { events: event._id } },
+        { new: true }
+      );
     },
 
-    removeStudent: async (parent, { id }) => {
-      return Student.findOneAndDelete({ _id: id });
+    removeStudent: async (parent, { _id, event }) => {
+      // const student = await Student.findOneAndDelete({_id});
+      return await Event.findByIdAndUpdate(
+        { _id: event },
+        { $pull: { students: { _id } } },
+        { new: true }
+      );
     },
 
     updateEvent: async (
@@ -76,7 +81,7 @@ const resolvers = {
       return Event.findOneAndUpdate(
         { _id: id },
         { title, location, time, imageSource, description },
-        { new: true }
+        { new: true, runValidators: true }
       );
     },
   },

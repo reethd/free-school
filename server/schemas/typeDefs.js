@@ -60,9 +60,9 @@ const typeDefs = gql `
         addUser(username: String!, email: String!, password: String!): Auth
         addEvent(newEvent: InputEvent!): User
         addStudent(newStudent: InputStudent!): Event
-        removeEvent(eventId: ID!): User
-        removeStudent(studentId: ID!): Event
-        updateEvent(eventId: ID!): User
+        removeEvent(_id: ID!): User
+        removeStudent(_id: ID!, event: ID!): Event
+        updateEvent(_id: ID!): User
     }
 
 `;
