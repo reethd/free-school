@@ -2,7 +2,8 @@
     {
         "title": "How to Build a Birdhouse",
         "location": "Sandy Creek Nature Center",
-        "time": "Sunday April 23rd 3pm",
+        "date": "Sunday April 23rd",
+        "time": "3pm",
         "imageSource": "",
         "description": "Come to Sandy Creek to learn how to build a birdhouse from scratch! All tools and materials provided. Includes basic woodworking as well as finishing.",
         "students": [
@@ -21,7 +22,8 @@
     {
         "title": "DIY Music Recording",
         "location": "123 Easy St",
-        "time": "Thursday April 27th 11am",
+        "date": "Thursday April 27th ",
+        "time": "11am",
         "imageSource": "",
         "description": "This seminar will demonstrate how to make a basic music recording. Topics covered will include microphone placement, room treatment and more!",
         "students": [
@@ -40,7 +42,8 @@
     {
         "title": "Basic Car Repair",
         "location": "Bike Shop Parking Lot",
-        "time": "Tuesday May 9th 12pm",
+        "date": "Tuesday May 9th  ",
+        "time": "12pm",
         "imageSource": "",
         "description": "Ever struggled with changing a tire? What about jumping your battery? Learn how to solve these common issues and more at the Bike Shop Parking Lot! Build confidence in basic car repair and maintenance and save yourself money at the same time!",
         "students": [
@@ -59,7 +62,8 @@
     {
         "title": "Who's that Fungi?",
         "location": "Ben Burton Park",
-        "time": "Friday May 26th",
+        "date": "Sunday April 23rd",
+        "time": "Noon",
         "imageSource": "",
         "description": "Come on a nature walk as Ed Rooney points out and identifies different kinds of fungi. Learn what you can and cannot eat as well as medicinal and other uses for foraged flora.",
         "students": [

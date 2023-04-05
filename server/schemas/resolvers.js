@@ -21,11 +21,11 @@ const resolvers = {
     login: async (parent, { username, password }) => {
       const user = await User.findOne({ username });
       if (!user) {
-        throw new AuthenticationError("Invalid username or password");
+        throw new AuthenticationError("Invalid username");
       }
       const correctPw = await user.isCorrectPassword(password);
       if (!correctPw) {
-        throw new AuthenticationError("Invalid username or password");
+        throw new AuthenticationError("Invalid password");
       }
       const token = signToken(user);
       return { token, user };
@@ -49,8 +49,8 @@ const resolvers = {
     addStudent: async (parent, args) => {
       // const student = await Student.create(args);
       const updatedEvent = await Event.findByIdAndUpdate(
-        { _id: student.event.id },
-        { $push: { students: student._id } },
+        { _id: args.event },
+        { $push: { students: args.newStudent } },
         { new: true }
       );
       return updatedEvent;
@@ -74,13 +74,50 @@ const resolvers = {
       );
     },
 
-    updateEvent: async (
-      parent,
-      { id, title, location, time, imageSource, description }
-    ) => {
-      return Event.findOneAndUpdate(
-        { _id: id },
-        { title, location, time, imageSource, description },
+    updateEventTitle: async (parent, { _id, title }) => {
+      return await Event.findOneAndUpdate(
+        { _id: _id },
+        { title },
+        { new: true, runValidators: true }
+      );
+    },
+
+    updateEventLocation: async (parent, { _id, location }) => {
+      return await Event.findOneAndUpdate(
+        { _id: _id },
+        { location },
+        { new: true, runValidators: true }
+      );
+    },
+
+    updateEventDate: async (parent, { _id, date }) => {
+      return await Event.findOneAndUpdate(
+        { _id: _id },
+        { date },
+        { new: true, runValidators: true }
+      );
+    },
+
+    updateEventTime: async (parent, { _id, time }) => {
+      return await Event.findOneAndUpdate(
+        { _id: _id },
+        { time },
+        { new: true, runValidators: true }
+      );
+    },
+
+    updateEventImageSource: async (parent, { _id, imageSource }) => {
+      return await Event.findOneAndUpdate(
+        { _id: _id },
+        { imageSource },
+        { new: true, runValidators: true }
+      );
+    },
+
+    updateEventDescription: async (parent, { _id, description }) => {
+      return await Event.findOneAndUpdate(
+        { _id: _id },
+        { description },
         { new: true, runValidators: true }
       );
     },
