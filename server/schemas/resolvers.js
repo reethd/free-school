@@ -65,7 +65,7 @@ const resolvers = {
       );
     },
 
-    removeStudent: async (parent, { _id, event }) => {
+    removeStudent: async (parent, { _id, event}) => {
       // const student = await Student.findOneAndDelete({_id});
       return await Event.findByIdAndUpdate(
         { _id: event },
@@ -93,7 +93,7 @@ const resolvers = {
     updateEventDate: async (parent, { _id, date }) => {
       return await Event.findOneAndUpdate(
         { _id: _id },
-        { date },
+        { dat },
         { new: true, runValidators: true }
       );
     },
