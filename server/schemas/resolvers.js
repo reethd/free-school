@@ -12,8 +12,8 @@ const resolvers = {
     events: async () => {
       return await Event.find().populate("teacher");
     },
-    event: async () => {
-      return await Event.findOne({}).populate("");
+    event: async (parent, { _id }) => {
+      return await Event.findById({ _id: _id });
     },
   },
 
@@ -65,7 +65,7 @@ const resolvers = {
       );
     },
 
-    removeStudent: async (parent, { _id, event}) => {
+    removeStudent: async (parent, { _id, event }) => {
       // const student = await Student.findOneAndDelete({_id});
       return await Event.findByIdAndUpdate(
         { _id: event },
