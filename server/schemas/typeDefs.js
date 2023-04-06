@@ -54,7 +54,7 @@ const typeDefs = gql`
     events: [Event]
     event(_id: ID!): Event
     students: [Student]
-    student(studentId: ID!): Student
+    student(_id: ID!): Student
   }
 
   type Mutation {
