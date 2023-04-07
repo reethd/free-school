@@ -8,6 +8,7 @@ const typeDefs = gql`
     email: String!
     events: [Event]
   }
+
   type Event {
     _id: ID!
     title: String!
@@ -20,6 +21,7 @@ const typeDefs = gql`
     createdAt: String
     students: [Student]
   }
+
   type Student {
     _id: ID!
     name: String!
