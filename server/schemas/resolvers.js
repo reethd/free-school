@@ -93,7 +93,7 @@ const resolvers = {
     updateEventDate: async (parent, { _id, date }) => {
       return await Event.findOneAndUpdate(
         { _id: _id },
-        { dat },
+        { date },
         { new: true, runValidators: true }
       );
     },
