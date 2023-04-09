@@ -42,21 +42,6 @@ const Login = (props) => {
 
 
   return(
-
-    // <form>
-    //   <div className ="form-control">
-    //     <label htmlFor="username">Username</label>
-    //     <input type="text" id="username"/>
-    //   </div>
-    //   <div className ="form-control">
-    //     <label htmlFor="password">Password</label>
-    //     <input type="password" id="password"/>
-    //   </div>
-    //   <div className="form=actions">
-    //     <button type="button">Sign Up</button>
-    //     <button type="submit">Submit</button>
-    //   </div>
-    // </form>
     <div>
         <h1>Log in now! Or else!</h1>
     <form onSubmit={handleFormSubmit}>
