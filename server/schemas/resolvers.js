@@ -60,7 +60,7 @@ const resolvers = {
         const hashedPassword = await bcrypt.hash(args.password, 12);
         const user = await User.create({ ...args, password: hashedPassword });
         await user.save();
-        return { ...user._doc, password: null, _id: user.id };
+        return { user, token, tokenExpiration: 1 };
       } catch (err) {
         throw err;
       }
