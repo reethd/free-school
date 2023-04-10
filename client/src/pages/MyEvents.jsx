@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Login from "./Login"
+import isAuth from '../utils/isAuth';
+
 
  const MyEvents = () => {
-  const [token, setToken] = useState();
 
-  if(!token) {
-    return <Login setToken={setToken}/>
+
+ if(!isAuth.loggedIn()) {
+    return <Login />
   }
 
   return (
