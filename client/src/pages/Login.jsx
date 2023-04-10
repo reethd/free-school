@@ -8,7 +8,7 @@ import isAuth from '../utils/isAuth';
 const Login = (props) => {
     const [formState, setFormState] = useState({username: '', password: '' });
     const [login, { error, data }] = useMutation(LOGIN_USER);
-  
+   console.log(formState)
     // update state based on form input changes
     const handleChange = (event) => {
       const { name, value } = event.target;
@@ -35,7 +35,7 @@ const Login = (props) => {
   
 
       setFormState({
-        email: '',
+        username: '',
         password: '',
       });
     };
