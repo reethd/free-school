@@ -17,6 +17,8 @@
         "concurrently": "^5.1.0"
     },
     "dependencies": {
-        "react-icons": "^4.8.0"
+        "rea
+      }
+  "react-icons": "^4.8.0"
     }
 }

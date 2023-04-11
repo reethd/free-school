@@ -60,7 +60,14 @@ const resolvers = {
         const hashedPassword = await bcrypt.hash(args.password, 12);
         const user = await User.create({ ...args, password: hashedPassword });
         await user.save();
-        return { ...user._doc, password: null, _id: user.id };
+
+        const token = jwt.sign(
+          { _id: user._id, username: user.username, email: user.email },
+          "classiccitycoders",
+          { expiresIn: "1h" }
+        );
+
+        return { user, token, tokenExpiration: 1 };
       } catch (err) {
         throw err;
       }
@@ -95,7 +102,7 @@ const resolvers = {
     addEvent: async (parent, args, context) => {
       
       const event = await Event.create({ ...args, teacher: context.user._id });
-      // const event = await Event.create({ ...args, teacher: "643085d77ccfe593d3eb9c21" });
+      // const event = await Event.create({ ...args, teacher: "6434307619fdd1a874fb91b0" });
 
       // let createdEvent;
 
@@ -112,7 +119,8 @@ const resolvers = {
           throw new Error('User not found');
         }
         user.events.push(event)
-        return await user.save();
+        await user.save();
+        return event;
       } catch (err) {
         console.log(err)
         throw err;

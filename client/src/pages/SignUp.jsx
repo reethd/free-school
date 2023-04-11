@@ -8,7 +8,7 @@ import isAuth from '../utils/isAuth';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
   });
@@ -38,7 +38,14 @@ const Signup = () => {
     } catch (e) {
       console.error(e);
     }
+
+    setFormState({
+      username: '',
+      password: '',
+    });
   };
+
+
 
   return (
     <div>
