@@ -13,21 +13,19 @@ mutation Login($username: String!, $password: String!) {
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
-      token
-      user
-    }
+mutation AddUser($username: String!, $password: String!, $email: String!) {
+  addUser(username: $username, password: $password, email: $email) {
+    token
   }
+}
 `;
 
 export const ADD_EVENT = gql`
-  mutation addEvent($newEvent: InputEvent!) {
-    addEvent(newEvent: $newEvent) {
-      username
-      events
-    }
+mutation AddEvent($title: String!, $location: String!, $date: String!, $time: String!, $description: String!, $imageSource: String) {
+  addEvent(title: $title, location: $location, date: $date, time: $time, description: $description, imageSource: $imageSource) {
+    title
   }
+}
 `;
 
 export const ADD_STUDENT = gql`
