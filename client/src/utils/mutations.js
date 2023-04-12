@@ -77,8 +77,8 @@ export const REMOVE_STUDENT = gql`
 `;
 
 export const UPDATE_EVENT_TITLE = gql`
-  mutation updateEventTitle($_id: ID!, $title: String!) {
-    updateEventTitle(_id: $_id, title: $title) {
+  mutation updateEventTitle($id: ID!, $title: String!) {
+    updateEventTitle(_id: $id, title: $title) {
       title
     }
   }

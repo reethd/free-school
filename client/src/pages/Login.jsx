@@ -42,17 +42,15 @@ const Login = (props) => {
 
 
   return(
-    <div>
+    <div className="form">
         <h1>Log in now! Or else!</h1>
     <form onSubmit={handleFormSubmit}>
       <input placeholder="Your username" name="username" value={formState.username} onChange={handleChange} ></input>
       <input placeholder="********" name="password" type="password" value={formState.password} onChange={handleChange} ></input>
-
-        <button type="submit">Submit</button>
-
+      <button type="submit">Submit</button>
     </form>
     </div>
   )
-}
+};
 
 export default Login;

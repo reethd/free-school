@@ -4,7 +4,6 @@ import React from 'react'
 const AllEvents = ({events}) => {
   return (
     <div>
-      <h3>All Upcoming Classes</h3>
       <div >
         {events &&
           events.map((event) => (
@@ -20,7 +19,7 @@ const AllEvents = ({events}) => {
          ))}
       </div>
     </div>
-    
+
     // <div className="class-card">
     //     <h5 className="event-title">{event.title}</h5>
     //     {event.teacher ? <p>{event.teacher} </p> : null}

@@ -34,7 +34,7 @@ const Navbar = () => {
           <Link to="/signup">Signup</Link>
         </li>
         <li>
-          <Link to="/myevents">My Classes</Link>
+          <Link to="/myevents">Classes</Link>
         </li>
       </ul>
       <div className="hamburger" onClick={handleClick}>

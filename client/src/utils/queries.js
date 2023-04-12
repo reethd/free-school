@@ -16,7 +16,7 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      events
+      events 
     }
   }
 `;
@@ -26,7 +26,7 @@ export const QUERY_EVENTS = gql`
     events {
       title
       teacher {
-        username
+        _id
       }
       location
       date
@@ -44,17 +44,23 @@ export const QUERY_EVENTS = gql`
 `;
 
 export const QUERY_EVENT = gql`
-  query singleEvent(_id: $_id) {
+  query singleEvent($_id: _id) {
     event(_id: $_id) {
       createdAt
       title
-      teacher
+      teacher {
+        _id
+      }
       location
       date
       time
       imageSource
       description
-      students
+      students {
+        name
+        email
+        phone
+      }
     }
   }
 `;

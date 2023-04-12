@@ -16,6 +16,8 @@ const resolvers = {
     },
     events: async () => {
       return await Event.find().populate("teacher");
+      // return await Event.find();
+
     },
     event: async (parent, { _id }) => {
       return await Event.findById({ _id: _id });
