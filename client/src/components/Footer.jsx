@@ -1,9 +1,12 @@
-import React from 'react'
+import './FooterStyles.css';
+import React from 'react';
 
 const Footer = () => {
   return (
-    <div>
-      <h5>FREE SCHOOL FOOTER</h5>
+    <div className="footer">
+      <div className="footer-container">
+      <h4>FREE SCHOOL FOOTER</h4>
+      </div>
     </div>
   )
 };

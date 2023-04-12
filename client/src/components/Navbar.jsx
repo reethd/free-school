@@ -1,5 +1,5 @@
-import './NavbarStyles.css';
 import React, { useState } from "react";
+import './NavbarStyles.css';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
@@ -20,22 +20,33 @@ const Navbar = () => {
 
   return (
     <div className={color ? 'header header-bg' : 'header'}>
-    <Link to="/"><h1>Free School</h1></Link>
-    <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-        <li><Link to="/free-school"><h1>Home</h1></Link></li>
-        <li><Link to="/login">Login</Link></li>
-        <li><Link to="/myevents">My Classes</Link></li>
-        <li><Link to="/signup">Sign Up</Link></li>
-    </ul>
-    <div className="hamburger" onClick={handleClick}>
+      <Link to="/my-portfolio">
+        <h1>Free School</h1>
+      </Link>
+      <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+        <li>
+          <Link to="/free-school">Free School</Link>
+        </li>
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+        <li>
+          <Link to="/signup">Signup</Link>
+        </li>
+        <li>
+          <Link to="/myevents">My Classes</Link>
+        </li>
+      </ul>
+      <div className="hamburger" onClick={handleClick}>
         {click ? (
-          <FaTimes size={20} style={{ color: "#fff" }} />
+          <FaTimes size={20} style={{ color: 'white' }} />
         ) : (
-          <FaBars size={20} style={{ color: "#fff" }} />
-        )};
+          <FaBars size={20} style={{ color: 'white' }} />
+        )}
+        ;
       </div>
     </div>
-  )
+  );
 };
 
 export default Navbar;

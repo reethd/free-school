@@ -24,14 +24,21 @@ export const QUERY_USER = gql`
 export const QUERY_EVENTS = gql`
   query allEvents {
     events {
-      createdAt
       title
-      teacher
+      teacher {
+        username
+      }
       location
       date
       time
       imageSource
       description
+      createdAt
+      students {
+        name
+        email
+        phone
+      }
     }
   }
 `;
