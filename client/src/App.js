@@ -45,6 +45,10 @@ function App() {
       <ApolloProvider client={client}>
         <BrowserRouter>
           <Navbar />
+          <br/>
+          <br/>
+          <br/>
+          <br/>       
           <Routes>
             <Route path="/free-school" element={<Home />}/>
             <Route path="/login" element={<Login />} />
