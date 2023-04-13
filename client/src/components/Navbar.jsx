@@ -25,7 +25,7 @@ const Navbar = () => {
       </Link>
       <ul className={click ? 'nav-menu active' : 'nav-menu'}>
         <li>
-          <Link to="/free-school">Free School</Link>
+          <Link to="/free-school">Home</Link>
         </li>
         <li>
           <Link to="/login">Login</Link>
@@ -43,7 +43,7 @@ const Navbar = () => {
         ) : (
           <FaBars size={20} style={{ color: 'white' }} />
         )}
-        ;
+        
       </div>
     </div>
   );
