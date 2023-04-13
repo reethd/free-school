@@ -16,7 +16,7 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      events 
+      events
     }
   }
 `;
@@ -24,6 +24,7 @@ export const QUERY_USER = gql`
 export const QUERY_EVENTS = gql`
   query allEvents {
     events {
+      _id
       title
       teacher {
         _id
