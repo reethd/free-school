@@ -26,13 +26,13 @@ h5 {
   border-radius: 20px ;
 }
 
-/* .btn {
+.btn {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 10px;
-} */
+}
 
 h2 {
   color: white;

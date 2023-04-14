@@ -65,7 +65,7 @@ const AllEvents = ({events}) => {
            <p>{event.description}</p>
            {event.imageSource ? <img  src={`${event.imageSource}`} alt={`${event.title}`}/> : null}
            <div class="text-box">
-            <a href="#" class="btn btn-white btn-animate"><button onClick={()=>handleOnClick(event._id)}>Sign up for this class</button></a></div>
+            <a href="#module"><button onClick={()=>handleOnClick(event._id)}>Sign up for this class</button></a></div>
 
           </div>
 
@@ -93,9 +93,9 @@ const AllEvents = ({events}) => {
                   value={formState.phone}
                   onChange={handleChange}
                 />
-                <button type="submit" > Submit  </button>
+                <div class="btn"><button type="submit" > Submit  </button></div>
                 </form>
-                <div class="text-box"><a href="#" class="btn btn-white btn-animate"><button onClick={()=> setShowModal(false)}>Exit</button></a></div>
+                <div class="btn"><button onClick={()=> setShowModal(false)}>Exit</button></div>
          </div>}
       </div>
     </div>
