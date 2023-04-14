@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const { User, Student, Event } = require("../models");
 const jwt = require("jsonwebtoken");
 const { signToken } = require("../utils/auth");
@@ -10,8 +10,8 @@ const resolvers = {
       if (context.user) {
         return User.findOne({ _id: context.user._id });
       }
-      throw new AuthenticationError('You need to be logged in!');
-    },    
+      throw new AuthenticationError("You need to be logged in!");
+    },
     user: async (parent, { username }) => {
       return await User.findOne({ username })
         .populate("events")
@@ -22,7 +22,6 @@ const resolvers = {
     },
     events: async () => {
       return await Event.find().populate("teacher");
-
     },
     event: async (parent, { _id }) => {
       return await Event.findById({ _id: _id });
@@ -30,8 +29,7 @@ const resolvers = {
   },
 
   Mutation: {
-    login: async (parent, { username, password }) => 
-    {
+    login: async (parent, { username, password }) => {
       const user = await User.findOne({ username: username });
       if (!user) {
         throw new AuthenticationError("Invalid username");
@@ -74,21 +72,20 @@ const resolvers = {
     },
 
     addEvent: async (parent, args, context) => {
-      
       const event = await Event.create({ ...args, teacher: context.user._id });
 
       const user = await User.findById(event.teacher);
 
-        if (!user){
-          throw new Error('User not found');
-        }
+      if (!user) {
+        throw new Error("User not found");
+      }
 
-          await User.findOneAndUpdate(
-          { _id: event.teacher },
-          { $addToSet: { events: event._id } }
-        );
+      await User.findOneAndUpdate(
+        { _id: event.teacher },
+        { $addToSet: { events: event._id } }
+      );
 
-        return event;
+      return event;
     },
 
     addStudent: async (parent, args) => {
