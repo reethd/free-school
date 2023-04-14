@@ -20,12 +20,14 @@
     padding: 1rem;
 }
 
+.email,
 .location {
     display: flex;
     margin-bottom: 0.8rem;
     font-weight: 600;
 }
 
+.email p,
 .location p{
     line-height: 30px;
 }
@@ -43,6 +45,10 @@
     padding: 1rem;
 }
 
+.right h4{
+    color: white;
+}
+
 .social {
     margin-top: 1rem;
 }
@@ -50,6 +56,11 @@
 .h4{
     font-size: 1.2rem;
     padding-bottom: 0.7rem;
+    color: white;
+}
+
+p{
+    color: white;
 }
 
 

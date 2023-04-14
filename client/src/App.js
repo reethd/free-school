@@ -14,6 +14,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import MyEvents from "./pages/MyEvents";
 import SignUp from "./pages/SignUp";
+import AddEvent from "./pages/AddEvent";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -45,14 +46,15 @@ function App() {
       <ApolloProvider client={client}>
         <BrowserRouter>
           <Navbar />
-          <br/>
-          <br/>
-          <br/>
-          <br/>       
+          <br />
+          <br />
+          <br />
+          <br />
           <Routes>
-            <Route path="/free-school" element={<Home />}/>
+            <Route path="/free-school" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/myevents" element={<MyEvents />} />
+            <Route path="/addevent" element={<AddEvent />} />
             <Route path="/signup" element={<SignUp />} />
           </Routes>
           <Footer />

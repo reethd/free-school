@@ -26,11 +26,16 @@ body {
 }
 }
 
-h1,
+h1 {
+  text-align:center;
+  color: rgb(90, 87, 87);
+  text-decoration: none;
+}
+
 h4,
 p,
 a {
-color: white;
+color: rgb(90, 87, 87);
 text-decoration: none;
 }
 

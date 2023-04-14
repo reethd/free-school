@@ -1,13 +1,14 @@
 import React, {useState} from 'react'
 import { ADD_STUDENT } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
-
+import './AllEventsStyles.css'
 
 
 const AllEvents = ({events}) => {
 
   const [showModal, setShowModal] = useState(false)
   const [currentEvent, setCurrentEvent] = useState()
+  
   const [addStudent, { error, data }] = useMutation(ADD_STUDENT);
   const [formState, setFormState] =useState({
     name: '',
@@ -50,7 +51,9 @@ const AllEvents = ({events}) => {
 
   return (
     <div>
-      <div >
+      <div className="evnt">
+       
+        
         {events &&
           events.map((event) => (
           <div className="event-card" key={event._id}>
@@ -61,13 +64,13 @@ const AllEvents = ({events}) => {
            <p>{event.time}</p>
            <p>{event.description}</p>
            {event.imageSource ? <img  src={`${event.imageSource}`} alt={`${event.title}`}/> : null}
-           <button onClick={()=>handleOnClick(event._id)}>Sign up for this class</button>
-
+           <div className="btn"><a href="#modal"><button onClick={()=>handleOnClick(event._id)}>Sign up for this class</button></a></div>
 
           </div>
+
          ))}
-        {showModal && <div>
-          <h2>SHOWING MODAL</h2>
+         {showModal && <div>
+          <h2 id="modal">Enter your information here!</h2>
          <form onSubmit={handleFormSubmit}> <input
                   placeholder="Your name"
                   name="name"
@@ -91,7 +94,7 @@ const AllEvents = ({events}) => {
                 />
                 <button type="submit" > Submit  </button>
                 </form>
-          <button onClick={()=> setShowModal(false)}>exit</button>
+                <div className="btn"><button onClick={()=> setShowModal(false)}>Exit</button></div>
          </div>}
       </div>
     </div>

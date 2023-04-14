@@ -28,6 +28,7 @@ export const ADD_EVENT = gql`
     $time: String!
     $description: String!
     $imageSource: String
+    $teacher: ID
   ) {
     addEvent(
       title: $title
@@ -36,6 +37,7 @@ export const ADD_EVENT = gql`
       time: $time
       description: $description
       imageSource: $imageSource
+      teacher: $teacher
     ) {
       title
     }
