@@ -72,18 +72,18 @@ const resolvers = {
     },
 
     addEvent: async (parent, args, context) => {
-      const event = await Event.create({ ...args, teacher: context.user._id });
+      const event = await Event.create({...args});
 
-      const user = await User.findById(event.teacher);
+      // const user = await User.findById(event.teacher);
 
-      if (!user) {
-        throw new Error("User not found");
-      }
+      // if (!user) {
+      //   throw new Error("User not found");
+      // }
 
-      await User.findOneAndUpdate(
-        { _id: event.teacher },
-        { $addToSet: { events: event._id } }
-      );
+      // await User.findOneAndUpdate(
+      //   { username: args.username },
+      //   { $addToSet: { events: event._id } }
+      // );
 
       return event;
     },

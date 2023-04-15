@@ -51,7 +51,7 @@ const AllEvents = ({events}) => {
 
   return (
     <div>
-      <div className="evnt">
+      <div className="event">
        
         
         {events &&

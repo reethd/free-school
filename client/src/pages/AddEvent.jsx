@@ -18,9 +18,9 @@ const [formState, setFormState] = useState({
     
 const [addEvent, { error}] = useMutation(ADD_EVENT);
 
-const {loading, data} = useQuery(QUERY_ME)
+// const {loading, data} = useQuery(QUERY_ME)
 
-const user = data?.me || data?.user || {};
+// const user = data?.me || data?.user || {};
 
 if(!isAuth.loggedIn()) {
         return <Login />
@@ -29,7 +29,6 @@ if(!isAuth.loggedIn()) {
 
 
 const handleChange = (event) => {
-
 const { name, value } = event.target;
 
     setFormState({
@@ -40,11 +39,11 @@ const { name, value } = event.target;
 
 const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log();
+    console.log({...formState});
 
     try {
       const { data } = await addEvent({
-        variables: { ...formState, teacher: user._id},
+        variables: {...formState},
       });
     } catch (e) {
       console.error(e);

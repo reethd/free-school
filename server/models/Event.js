@@ -39,10 +39,10 @@ const eventSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  teacher: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-  },
+  // teacher: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "User",
+  // },
   students: [studentSchema],
 });
 
