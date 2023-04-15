@@ -16,7 +16,7 @@ const [formState, setFormState] = useState({
     description:''
 });
     
-const [AddEvent, { error}] = useMutation(ADD_EVENT);
+const [addEvent, { error}] = useMutation(ADD_EVENT);
 
 const {loading, data} = useQuery(QUERY_ME)
 
@@ -43,8 +43,8 @@ const handleFormSubmit = async (event) => {
     console.log();
 
     try {
-      const { data } = await AddEvent({
-        variables: { ...formState},
+      const { data } = await addEvent({
+        variables: { ...formState, teacher: user._id},
       });
     } catch (e) {
       console.error(e);

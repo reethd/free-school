@@ -38,9 +38,7 @@ export const ADD_EVENT = gql`
       description: $description
       imageSource: $imageSource
       teacher: $teacher
-    ) {
-      title
-    }
+    )
   }
 `;
 
