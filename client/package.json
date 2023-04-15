@@ -1,7 +1,7 @@
 {
   "homepage": "http://reethd.github.io/free-school",
   "name": "free-school",
-  "proxy": "http://localhost:3001",
+  "proxy": "https://free-school-706.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
