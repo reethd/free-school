@@ -12,7 +12,7 @@ import isAuth from '../utils/isAuth';
 
   return (
     
-    <div><h1>My Classes</h1></div>
+    <div><h1>My Classes.</h1></div>
   )
 };
 

@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <main>
       <div >
-        <h1>All Upcoming Classes</h1>
+        <h1>All Upcoming Classes.</h1>
         <div className="events-board">
           {loading ? (
             <div>Loading...</div>
