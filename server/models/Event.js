@@ -43,7 +43,7 @@ const eventSchema = new Schema({
   //   type: Schema.Types.ObjectId,
   //   ref: "User",
   // },
-  // students: [studentSchema],
+  students: [studentSchema],
 });
 
 const Event = model("Event", eventSchema);
