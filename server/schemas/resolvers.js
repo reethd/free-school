@@ -21,7 +21,7 @@ const resolvers = {
       return await User.find().populate("events");
     },
     events: async () => {
-      return await Event.find().populate("teacher");
+      return await Event.find()
     },
     event: async (parent, { _id }) => {
       return await Event.findById({ _id: _id });
@@ -72,20 +72,25 @@ const resolvers = {
     },
 
     addEvent: async (parent, args, context) => {
-      const event = await Event.create({...args});
+      try {
+        const event = await Event.create({ ...args });
+        await event.save();
 
-      // const user = await User.findById(event.teacher);
+        // const user = await User.findById(event.teacher);
 
-      // if (!user) {
-      //   throw new Error("User not found");
-      // }
+        // if (!user) {
+        //   throw new Error("User not found");
+        // }
 
-      // await User.findOneAndUpdate(
-      //   { username: args.username },
-      //   { $addToSet: { events: event._id } }
-      // );
+        // await User.findOneAndUpdate(
+        //   { username: args.username },
+        //   { $addToSet: { events: event._id } }
+        // );
 
-      return event;
+        return event;
+      } catch (err) {
+        throw err;
+      }
     },
 
     addStudent: async (parent, args) => {

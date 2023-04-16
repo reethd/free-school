@@ -49,9 +49,6 @@ export const QUERY_EVENTS = gql`
     events {
       _id
       title
-      teacher {
-        _id
-      }
       location
       date
       time

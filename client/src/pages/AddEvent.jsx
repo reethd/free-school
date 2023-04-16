@@ -45,6 +45,7 @@ const handleFormSubmit = async (event) => {
       const { data } = await addEvent({
         variables: {...formState},
       });
+
     } catch (e) {
       console.error(e);
     }
@@ -62,9 +63,9 @@ const handleFormSubmit = async (event) => {
 
 
  return (
-    <>
+    <div>
     <h1>Add Event</h1>
-    <form onSubmit={handleFormSubmit}>
+    <form onSubmit={()=>handleFormSubmit}>
      <input
         placeholder="Title"
         name="title"
@@ -110,7 +111,7 @@ const handleFormSubmit = async (event) => {
      <button type="submit">Submit</button>
         
     </form>
-    </>
+    </div>
 
 
   )

@@ -21,11 +21,21 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_EVENT = gql`
-  mutation AddEvent($newEvent: InputEvent) {
-    addEvent(newEvent: $newEvent) {
-      title
+mutation AddEvent($title: String!, $location: String!, $date: String!, $time: String!, $description: String!, $imageSource: String) {
+  addEvent(title: $title, location: $location, date: $date, time: $time, description: $description, imageSource: $imageSource) {
+    title
+    location
+    date
+    time
+    imageSource
+    description
+    students {
+      name
     }
+    createdAt
   }
+}
+
 `;
 
 export const ADD_STUDENT = gql`
