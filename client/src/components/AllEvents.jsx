@@ -64,7 +64,7 @@ const AllEvents = ({events}) => {
            <p>{event.time}</p>
            <p>{event.description}</p>
            {event.imageSource ? <img  src={`${event.imageSource}`} alt={`${event.title}`}/> : null}
-           <div class="text-box">
+           <div className="text-box">
             <a href="#module"><button onClick={()=>handleOnClick(event._id)}>Sign up for this class</button></a></div>
 
           </div>

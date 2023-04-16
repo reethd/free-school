@@ -42,7 +42,7 @@ const handleFormSubmit = async (event) => {
     console.log({...formState});
 
     try {
-      const { data } = await addEvent({
+      await addEvent({
         variables: {...formState},
       });
 
