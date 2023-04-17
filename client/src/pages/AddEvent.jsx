@@ -3,10 +3,10 @@ import Login from "./Login"
 import isAuth from '../utils/isAuth';
 import { useMutation, useQuery } from '@apollo/client';
 import { ADD_EVENT } from '../utils/mutations';
-import { QUERY_ME } from '../utils/queries';
 
 const AddEvent = () => {
 
+// Sets empty default form state
 const [formState, setFormState] = useState({
     title: '',
     location: '',
@@ -18,16 +18,13 @@ const [formState, setFormState] = useState({
     
 const [addEvent, { error}] = useMutation(ADD_EVENT);
 
-// const {loading, data} = useQuery(QUERY_ME)
-
-// const user = data?.me || data?.user || {};
-
+// Sends user to login page if not logged in
 if(!isAuth.loggedIn()) {
         return <Login />
  }
 
 
-
+// Saves current form values
 const handleChange = (event) => {
 const { name, value } = event.target;
 
@@ -37,6 +34,7 @@ const { name, value } = event.target;
     });
   };
 
+  // Runs addEvent mutation with form values on submit
 const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log({...formState});

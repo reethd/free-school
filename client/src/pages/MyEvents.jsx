@@ -5,7 +5,7 @@ import isAuth from '../utils/isAuth';
 
  const MyEvents = () => {
 
-
+// Sends user to log in page if not logged in
  if(!isAuth.loggedIn()) {
     return <Login />
   }

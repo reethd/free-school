@@ -5,6 +5,7 @@ import AllEvents from '../components/AllEvents';
 
 const Home = () => {
 
+    // Queries all events and saves array to events variable
     const { loading, data } = useQuery(QUERY_EVENTS);
     const events = data?.events || []; 
 

@@ -31,6 +31,8 @@
     display:none
 }
 
+/* Allows for responsive screen and styling of hamburger menu*/
+
 @media screen and (max-width: 1040px) {
     .nav-menu{
         flex-direction:column;

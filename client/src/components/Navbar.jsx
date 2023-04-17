@@ -3,8 +3,12 @@ import './NavbarStyles.css';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
+// Navbar component that renders links at the top of the page
 
 const Navbar = () => {
+
+  // Sets click function for hamburger menu on icons
+
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
   
@@ -37,9 +41,12 @@ const Navbar = () => {
           <Link to="/myevents">My Classes</Link>
         </li>
         <li>
-          <Link to="/addevent">Add Event</Link>
+          <Link to="/addevent">Add Class</Link>
         </li>
       </ul>
+
+      {/* Icons for hamburger menu */}
+
       <div className="hamburger" onClick={handleClick}>
         {click ? (
           <FaTimes size={20} style={{ color: 'white' }} />

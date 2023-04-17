@@ -6,6 +6,7 @@ import './AllEventsStyles.css'
 
 const AllEvents = ({events}) => {
 
+  // Sets states for modal visibility, currently selected event and form state
   const [showModal, setShowModal] = useState(false)
   const [currentEvent, setCurrentEvent] = useState()
   
@@ -16,11 +17,13 @@ const AllEvents = ({events}) => {
     phone: '',
   })
 
+  // Shows modal and selects current event
   const handleOnClick = (id) => {
     setShowModal(true)
     setCurrentEvent(id)
   }
 
+  // Saves current value input to form state
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -30,6 +33,7 @@ const AllEvents = ({events}) => {
     });
   };
 
+  // Prevents empty form from being submitted, then runs addStudent mutation with form values
   const handleFormSubmit = async (event) => {
     console.log(event)
     event.preventDefault();
@@ -53,7 +57,7 @@ const AllEvents = ({events}) => {
     <div>
       <div className="event">
        
-        
+        {/* Maps all events to the front page */}
         {events &&
           events.map((event) => (
           <div className="event-card" key={event._id}>
@@ -70,6 +74,7 @@ const AllEvents = ({events}) => {
           </div>
 
          ))}
+         {/* Add student modal */}
          {showModal && <div>
           <h2 id="modal">Enter your information here!</h2>
          <form onSubmit={handleFormSubmit}> <input
@@ -100,17 +105,7 @@ const AllEvents = ({events}) => {
       </div>
     </div>
 
-    // <div className="class-card">
-    //     <h5 className="event-title">{event.title}</h5>
-    //     {event.teacher ? <p>{event.teacher} </p> : null}
-    //     <p>{event.location}</p>
-    //     <p>{event.date}</p>
-    //     <p>{event.time}</p>
-    //     <p>{event.description}</p>
-    //     {event.imageSource ? <img  src={`${event.imageSource}`} alt={`${event.title}`}/> : null}
 
-
-    // </div>
   )
 };
 

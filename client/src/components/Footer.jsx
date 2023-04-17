@@ -2,11 +2,10 @@ import './FooterStyles.css';
 import React from 'react';
 import {
   FaHome,
-  FaPhone,
   FaMailBulk,
-  FaLinkedin,
-  FaGithub,
 } from 'react-icons/fa';
+
+// Footer component that renders location, email, and about section
 
 const Footer = () => {
   return (

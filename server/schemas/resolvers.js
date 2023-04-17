@@ -1,3 +1,5 @@
+// Packages
+
 const { AuthenticationError } = require("apollo-server-express");
 const bcrypt = require("bcryptjs");
 const { User, Student, Event } = require("../models");
@@ -6,23 +8,28 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
+    // Queries single user based on context
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id });
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    // Finds user based on username and populates events array with students
     user: async (parent, { username }) => {
       return await User.findOne({ username })
         .populate("events")
         .populate({ path: "events", populate: "students" });
     },
+    // Finds all users
     users: async (parent, args) => {
       return await User.find().populate("events");
     },
+    // Finds all events
     events: async () => {
-      return await Event.find()
+      return await Event.find();
     },
+    // Finds single event by ID
     event: async (parent, { _id }) => {
       return await Event.findById({ _id: _id });
     },
@@ -32,14 +39,14 @@ const resolvers = {
     login: async (parent, { username, password }) => {
       const user = await User.findOne({ username: username });
       if (!user) {
-        throw new AuthenticationError("Invalid username");
+        throw new AuthenticationError("Invalid username or password");
       }
-
+      // Compares hashed passwords with bcrypt
       const correctPwd = await bcrypt.compare(password, user.password);
       if (!correctPwd) {
-        throw new AuthenticationError("Invalid password");
+        throw new AuthenticationError("Invalid username or password");
       }
-
+      // Signs a token to current user session
       const token = jwt.sign(
         { _id: user._id, username: user.username, email: user.email },
         "classiccitycoders",
@@ -51,10 +58,12 @@ const resolvers = {
 
     addUser: async (parent, args) => {
       try {
+        // Checks if username already exists
         const existingUser = await User.findOne({ username: args.username });
         if (existingUser) {
           throw new Error("There is already a user with that name!");
         }
+        // Hashes password with bcrypt
         const hashedPassword = await bcrypt.hash(args.password, 12);
         const user = await User.create({ ...args, password: hashedPassword });
         await user.save();
@@ -73,20 +82,8 @@ const resolvers = {
 
     addEvent: async (parent, args, context) => {
       try {
-        const event = await Event.create({ ...args});
+        const event = await Event.create({ ...args });
         await event.save();
-
-        // const user = await User.findById(event.teacher);
-
-        // if (!user) {
-        //   throw new Error("User not found");
-        // }
-
-        // await User.findOneAndUpdate(
-        //   { username: args.username },
-        //   { $addToSet: { events: event._id } }
-        // );
-
         return event;
       } catch (err) {
         throw err;
@@ -94,6 +91,7 @@ const resolvers = {
     },
 
     addStudent: async (parent, args) => {
+      // Adds student to students array of respective event
       const updatedEvent = await Event.findByIdAndUpdate(
         { _id: args.event },
         { $push: { students: args.newStudent } },
