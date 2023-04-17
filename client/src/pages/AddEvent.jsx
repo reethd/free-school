@@ -62,7 +62,7 @@ const handleFormSubmit = async (event) => {
 
  return (
     <div>
-    <h1>Add Event</h1>
+    <h1>Add Class</h1>
     <form onSubmit={handleFormSubmit}>
      <input
         placeholder="Title"
