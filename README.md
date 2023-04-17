@@ -16,7 +16,7 @@ Athens Free School came together in 2016, organized by a small group of people i
 
 Live Deployment: https://free-school-706.herokuapp.com/
 
-
+![free-school](https://user-images.githubusercontent.com/115495027/232602264-3c96c39f-2c68-4f42-a7ce-c02bd4eb3a1b.png)
 
 ## Installation
 
