@@ -17,7 +17,7 @@ const AllEvents = ({events}) => {
     phone: '',
   })
 
-  // Shows modal and selects current event
+  // Shows Add Student modal and selects current event
   const handleOnClick = (id) => {
     setShowModal(true)
     setCurrentEvent(id)
