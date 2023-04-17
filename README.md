@@ -12,7 +12,7 @@
 
 ## Description
 
-Athens Free School came together in 2016, organized by a small group of people interested in sharing free forms of learning that we may not find or all have access to withimn institutionalized schooling. They began to invite community members to share their knowledge, skill, passions, and ideas with others. Each month, prospective teachers submitted their class, place, and time for the next calendar. Our project is about making a website for Athens Free School to use for their teachers and students to be able sign up for free classes. Using MongoDB, Express, Node, React we have created a website from front-end to back-end that aloows users to sign up and start free classes today!
+Athens Free School came together in 2016, organized by a small group of people interested in sharing free forms of learning that we may not find or all have access to within institutionalized schooling. They began to invite community members to share their knowledge, skill, passions, and ideas with others. Each month, prospective teachers submitted their class, place, and time for the next calendar. Our project is about making a website for Athens Free School to use for their teachers and students to be able sign up for free classes. Using MongoDB, Express, Node, React we have created a website from front-end to back-end that aloows users to sign up and start free classes today!
 
 Live Deployment: https://free-school-706.herokuapp.com/
 
