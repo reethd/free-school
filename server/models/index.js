@@ -1,3 +1,5 @@
+// Defining model routes
+
 const User = require("./User");
 const Event = require("./Event");
 

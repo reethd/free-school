@@ -14,14 +14,11 @@ const studentSchema = new Schema({
   phone: {
     type: String,
     required: true,
-    // match: [/^[\.-)( ]*([0-9]{3})[\.-)( ]*([0-9]{3})[\.-)( ]*([0-9]{4})$/,"Must be a phone number!",],
   },
   event: {
     type: Schema.Types.ObjectId,
     ref: "Event",
   },
 });
-
-// const Student = model("Student", studentSchema);
 
 module.exports = studentSchema;
